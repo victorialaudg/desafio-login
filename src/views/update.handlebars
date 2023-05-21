@@ -1,0 +1,26 @@
+<script>
+    function updateProduct(name){
+        fetch(`http://localhost:8080/products/${name}`, {
+            method: 'put',
+            body: JSON.stringify({
+                name: document.getElementById('name').value,
+                photo: document.getElementById('photo').value,
+                category: document.getElementById('category').value
+                type: document.getElementById('type').value
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        window.location.href = 'http://localhost:8080/products'
+    }
+</script>
+
+<h1>Actualizar producto</h1>
+<hr />
+<div id="formularioUpdate">
+    Name: <input type="text" id="name" name="name" value="{{products.name}}"><br>
+    Photo: <input type="text" id="photo" name="photo" value="{{products.photo}}"><br>
+    Type: <input type="text" id="type" name="type" value="{{products.type}}"><br>
+    <input type="button" onclick="updateProduct('{{products.name}}')" value="Actualizar">
+</div>

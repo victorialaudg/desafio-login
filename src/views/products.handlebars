@@ -1,0 +1,19 @@
+<div>
+<ul id="products">
+    {{#each docs}}
+    <li><a href="/products/{{this.name}}"><img src="{{this.photo}}" alt="{{this.name}}" width="150" /></a><br />{{this.category}}<br />{{this.name}} <br /> {{this.type}}<br />
+    <button id="btnDelete" onclick="deleteProduct('{{this.name}}')">Borrar {{this.name}}</button>
+    <button id="btnDelete" onclick="window.location.href='http://localhost:8080/products/update/{{this.name}}'">Actualizar los datos de {{this.name}}</button>
+    </li>
+    {{/each}}
+</ul>
+<br />
+<div>
+    {{#if hasPrevPage}}
+        <a href="{{prevLink}}">Anterior</a>
+    {{/if}}
+    {{#if hasNextPage}}
+        <a href="{{nextLink}}">Siguiente</a>
+    {{/if}}
+</div>
+</div>

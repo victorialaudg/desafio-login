@@ -1,0 +1,29 @@
+{
+  "name": "segunda-preentrega",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorialaudg/backend-segunda-preentrega.git"
+  },
+  "author": "Victoria Diani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorialaudg/backend-segunda-preentrega/issues"
+  },
+  "homepage": "https://github.com/victorialaudg/backend-segunda-preentrega#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "mongoose": "^7.1.1",
+    "mongoose-paginate-v2": "^1.7.1"
+  },
+  "keywords": [],
+  "description": ""
+}

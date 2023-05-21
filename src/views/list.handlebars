@@ -1,0 +1,23 @@
+
+<script>
+    function deleteProduct(name){
+       fetch(`http://localhost:8080/products/${name}`,{
+        method: "delete"
+       })
+       window.location.href="http://localhost:8080/products"
+    }
+</script>
+
+<div>
+    <p>Listando productos desde Handlebars....</p>
+</div>
+<div>
+    <ul id="products">
+    {{#each products}}
+    <li><a href="/products/{{this.name}}"><img src="{{this.photo}}" alt="{{this.name}}" width="150" /></a><br />{{this.category}}<br />{{this.name}} <br /> {{this.type}}<br />
+    <button id="btnDelete" onclick="deleteProduct('{{this.name}}')">Borrar {{this.name}}</button>
+    <button id="btnDelete" onclick="window.location.href='http://localhost:8080/products/update/{{this.name}}'">Actualizar los datos de {{this.name}}</button>
+    </li>
+    {{/each}}
+    </ul>
+</div>
