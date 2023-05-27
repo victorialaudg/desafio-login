@@ -9,8 +9,15 @@ router.get('/', async (req,res)=>{
     res.render('list', {products})
 })*/
 
+/* Autenticación
+const auth = (req, res, next) => {
+    if(req.session.user) return next()
+    return res.send('Error de autenticación')
+}*/
+
 router.get('/', (req,res) => (res.render('index')))
 
+//router.get('/products', auth, async(req,res) => {
 router.get('/products', async(req,res) => {
     let page = parseInt(req.query.page)
     if(!page) page = 1
