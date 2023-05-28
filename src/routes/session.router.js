@@ -28,7 +28,8 @@ router.post('/login', async(req,res) =>{
             error: 'Error en email o contraseña'
         })
     }
-    req.session.user = user
+    //req.session.user = user
+   
     res.redirect('/products')
 })
 
